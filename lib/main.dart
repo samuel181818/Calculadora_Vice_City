@@ -55,6 +55,22 @@ class _MyWidgetState extends State<MyWidget> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
+
+            // Pantalla de resultados
+            const Align(
+              alignment: Alignment.centerRight,
+              child: Padding(
+                padding: EdgeInsets.all(24),
+                child: Text(
+                  '0',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 55,
+                  ),
+                ),
+              ),
+            ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
