@@ -2,7 +2,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(home: MyWidget()));
+  runApp(
+    const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyWidget(),
+    ),
+  );
 }
 
 class MyWidget extends StatefulWidget {
@@ -13,17 +18,38 @@ class MyWidget extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<MyWidget> {
+
+  // Metodo para crear los botones
+  Widget botonVice(String texto, {bool rosa = false, IconData? icono}) {
+    final colorNeon = rosa
+        ? const Color(0xFFFF2FA8)
+        : const Color(0xFF20D6FF);
+
+    return ElevatedButton(
+      onPressed: () {},
+      style: ElevatedButton.styleFrom(
+        backgroundColor: const Color(0xFF1C1F4A),
+        foregroundColor: Colors.white,
+        fixedSize: const Size(70, 70),
+        padding: EdgeInsets.zero,
+        shape: CircleBorder(
+          side: BorderSide(color: colorNeon, width: 2),
+        ),
+        shadowColor: colorNeon,
+        elevation: 8,
+        textStyle: const TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      child: icono != null ? Icon(icono) : Text(texto),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-
-    final estiloBoton = ElevatedButton.styleFrom(
-  backgroundColor: const Color(0xFF252040),
-  foregroundColor: Colors.white,
-  shape: const CircleBorder(),
-  padding: const EdgeInsets.all(20),
-);
-
     return Scaffold(
+      backgroundColor: const Color(0xFF1A102B),
       body: Padding(
         padding: const EdgeInsets.only(bottom: 80),
         child: Column(
@@ -32,26 +58,10 @@ class _MyWidgetState extends State<MyWidget> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('AC'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('%'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Icon(Icons.backspace_rounded),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('÷'),
-                ),
+                botonVice('AC', rosa: true),
+                botonVice('%'),
+                botonVice('', icono: Icons.backspace_rounded),
+                botonVice('÷'),
               ],
             ),
 
@@ -60,26 +70,10 @@ class _MyWidgetState extends State<MyWidget> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('7'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('8'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('9'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('x'),
-                ),
+                botonVice('7'),
+                botonVice('8'),
+                botonVice('9'),
+                botonVice('x'),
               ],
             ),
 
@@ -88,26 +82,10 @@ class _MyWidgetState extends State<MyWidget> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('4'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('5'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('6'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('-'),
-                ),
+                botonVice('4'),
+                botonVice('5'),
+                botonVice('6'),
+                botonVice('-'),
               ],
             ),
 
@@ -116,26 +94,10 @@ class _MyWidgetState extends State<MyWidget> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('1'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('2'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('3'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('+'),
-                ),
+                botonVice('1'),
+                botonVice('2'),
+                botonVice('3'),
+                botonVice('+'),
               ],
             ),
 
@@ -144,26 +106,10 @@ class _MyWidgetState extends State<MyWidget> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('00'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('0'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text(','),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: estiloBoton,
-                  child: const Text('='),
-                ),
+                botonVice('00'),
+                botonVice('0'),
+                botonVice(','),
+                botonVice('=', rosa: true),
               ],
             ),
           ],
