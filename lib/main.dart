@@ -15,10 +15,11 @@ class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
- body: Center(
-  child: 
-Column(
-  children: [
+body: Padding(
+  padding: const EdgeInsets.only(bottom: 80),
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.end,
+    children: [
     Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
