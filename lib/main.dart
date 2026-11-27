@@ -19,6 +19,20 @@ class MyWidget extends StatefulWidget {
 
 class _MyWidgetState extends State<MyWidget> {
 
+  // Variable para mostrar los numeros
+  String pantalla = '0';
+
+  // Metodo para introducir numeros
+  void pulsarNumero(String numero) {
+    setState(() {
+      if (pantalla == '0') {
+        pantalla = numero == '00' ? '0' : numero;
+      } else {
+        pantalla += numero;
+      }
+    });
+  }
+
   // Metodo para crear los botones
   Widget botonVice(String texto, {bool rosa = false, IconData? icono}) {
     final colorNeon = rosa
@@ -26,7 +40,11 @@ class _MyWidgetState extends State<MyWidget> {
         : const Color(0xFF20D6FF);
 
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        if (int.tryParse(texto) != null) {
+          pulsarNumero(texto);
+        }
+      },
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color(0xFF1C1F4A),
         foregroundColor: Colors.white,
@@ -57,13 +75,13 @@ class _MyWidgetState extends State<MyWidget> {
           children: [
 
             // Pantalla de resultados
-            const Align(
+            Align(
               alignment: Alignment.centerRight,
               child: Padding(
-                padding: EdgeInsets.all(24),
+                padding: const EdgeInsets.all(24),
                 child: Text(
-                  '0',
-                  style: TextStyle(
+                  pantalla,
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 55,
                   ),
