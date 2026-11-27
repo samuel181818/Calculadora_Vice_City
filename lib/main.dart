@@ -17,9 +17,11 @@ class _MyWidgetState extends State<MyWidget> {
   Widget build(BuildContext context) {
 
     final estiloBoton = ElevatedButton.styleFrom(
-      shape: const CircleBorder(),
-      padding: const EdgeInsets.all(20),
-    );
+  backgroundColor: const Color(0xFF252040),
+  foregroundColor: Colors.white,
+  shape: const CircleBorder(),
+  padding: const EdgeInsets.all(20),
+);
 
     return Scaffold(
       body: Padding(
