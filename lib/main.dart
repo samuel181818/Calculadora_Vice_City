@@ -14,6 +14,17 @@ class MyWidget extends StatefulWidget {
 class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+  body: Center(
+    child: Column(
+      children: [
+        ElevatedButton(onPressed: () {}, child: const Text('00')),
+        ElevatedButton(onPressed: () {}, child: const Text('0')),
+        ElevatedButton(onPressed: () {}, child: const Text(',')),
+        ElevatedButton(onPressed: () {}, child: const Text('=')),
+      ],
+    ),
+  ),
+);
   }
 }
