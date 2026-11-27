@@ -58,6 +58,7 @@ class _MyWidgetState extends State<MyWidget> {
                 ),
               ],
             ),
+            const SizedBox(height: 12),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -95,6 +96,7 @@ class _MyWidgetState extends State<MyWidget> {
                 ),
               ],
             ),
+            const SizedBox(height: 12),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -132,6 +134,7 @@ class _MyWidgetState extends State<MyWidget> {
                 ),
               ],
             ),
+            const SizedBox(height: 12),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -169,6 +172,7 @@ class _MyWidgetState extends State<MyWidget> {
                 ),
               ],
             ),
+            const SizedBox(height: 12),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
